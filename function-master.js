@@ -8,23 +8,44 @@ C:
 E:
 */ 
 function objectValues(object) {
-    return 
+   let output = [];
+   for (let key in object){
+    output.push(object[key]);
+   }
+   return output;
 } 
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+let output = '';
+for(let key in object){
+    output += key + ' '
+}
+return output.trim();
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+/*
+I: object
+O: all its string values separated in a string, each separated by a space
+C:
+E:
+*/ 
 function valuesToString(object) {
-    
+  let output = '';
+  for (let key in object){
+    if(typeof object[key] === 'string') {
+        output += object[key] + ' '
+    }
+  }
+return output.trim();
 }
 
 //////////////////////////////////////////////////////////////////////

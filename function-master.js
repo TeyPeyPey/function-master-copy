@@ -73,32 +73,50 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    var string = 
-}
+    var words = string.split(' ');
+    for (let i = 0; i < words.length; i++){
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+    return words.join(' ');
+    }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
-}
-
+    var newName = object.name.charAt(0).toUpperCase() + object.name.slice(1).toLowerCase();
+    return 'Welcome' + ' ' + newName + '!';
+};
+console.log(welcomeMessage({name: 'Teyonce'}));
+console.log(welcomeMessage({name: 'bert'}));
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
-}
+    var newName = object.name.charAt(0).toUpperCase() + object.name.slice(1).toLowerCase();
+    var newSpecies = object.species.charAt(0).toUpperCase() + object.species.slice(1).toLowerCase(); 
+return newName + ' ' + 'is a' + ' ' + newSpecies
+};
+console.log(profileInfo({name: 'Rex', species: 'cat'}));
+console.log(profileInfo({name: 'cat', species: 'bird'}));
 
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+if(Array.isArray(object.noises)) {
+    return object.noises.join(' ');
+} else {
+    return 'there are no noises'
 }
+};
+console.log(maybeNoises({noises:['bark', 'woof', 'chirp', 'thump']}));
+console.log(maybeNoises([]));
+console.log(maybeNoises({}));
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////

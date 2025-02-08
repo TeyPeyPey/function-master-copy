@@ -110,7 +110,7 @@ console.log(profileInfo({name: 'cat', species: 'bird'}));
 function maybeNoises(object) {
 if(Array.isArray(object.noises)) {
     return object.noises.join(' ');
-} else if (object.noises.length > 0) {
+} else if (object.noises === []) {
     return 'there are no noises'
 } else {
     return 'there are no noises'

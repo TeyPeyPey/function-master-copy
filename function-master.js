@@ -110,11 +110,11 @@ console.log(profileInfo({name: 'cat', species: 'bird'}));
 function maybeNoises(object) {
 if(Array.isArray(object.noises)) {
     return object.noises.join(' ');
-} else if (object.noises === []) {
-    return 'there are no noises'
+} else if (Array.isArray(object.noises) && object.noises.length === 0) {
+    return 'there are no noises';
 } else {
-    return 'there are no noises'
-}
+    return 'there are no noises';
+} 
 };
 console.log(maybeNoises({noises:['bark', 'woof', 'chirp', 'thump']}));
 console.log(maybeNoises([]));
@@ -125,8 +125,12 @@ console.log(maybeNoises({}));
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    var answer = string.split(' ').includes(word);
+    return answer;
+  };
+  console.log(hasWord('hello guys please help', 'help'));
+  console.log(hasWord('this is kinf of crazy', 'kind'));
 
-}
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////

@@ -137,8 +137,14 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+     if (typeof object === 'array'){
+         object.friends = [];
+    } object.friends.push(name);
+        return object;
 }
+console.log(addFriend('Nosy', {friends: ['pete', 'amy', 'nope']}));
+console.log(addFriend('hen', {friends: []}));
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////

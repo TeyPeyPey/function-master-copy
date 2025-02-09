@@ -151,10 +151,15 @@ console.log(addFriend('hen', {friends: []}));
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-if(typeof object === 'array'){
-    
+    if(Array.isArray(object.friends)) {
+        return object.friends.includes(name);
+    } else {
+        return false;
+    }
 }
-}
+console.log(isFriend('teyonce', {friends: ['teyonce', 'pete', 'nope']}));
+console.log(isFriend('nope', {friends: ['carrie', 'ben', 'chunky']} ));
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////

@@ -108,14 +108,15 @@ console.log(profileInfo({name: 'cat', species: 'bird'}));
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-if(Array.isArray(object.noises)) {
-    return object.noises.join(' ');
-} else if (Array.isArray(object.noises) && object.noises.length === 0) {
-    return 'there are no noises';
-} else {
-    return 'there are no noises';
-} 
-};
+    if(Array.isArray(object.noises) && object.noises.length > 0){
+       return object.noises.join(' ');
+     } else if (Array.isArray(object.noises)) {
+     return 'there are no noises';
+   } else {
+     return 'there are no noises';
+   }
+   };
+
 console.log(maybeNoises({noises:['bark', 'woof', 'chirp', 'thump']}));
 console.log(maybeNoises([]));
 console.log(maybeNoises({}));

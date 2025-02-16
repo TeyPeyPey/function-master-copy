@@ -167,9 +167,14 @@ console.log(isFriend('nope', {friends: ['carrie', 'ben', 'chunky']} ));
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+var output = [];
+var noneNames = [];
+if (Array.isArray(array.includes(name))){
+    noneNames.push(name);
 }
-
+}
+console.log(nonFriends(('sam'), ['sam', 'john', 'ann']));
+console.log(nonFriends(('amy'), ['nancy', 'himp', 'kim']));
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

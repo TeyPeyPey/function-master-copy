@@ -166,15 +166,26 @@ console.log(isFriend('nope', {friends: ['carrie', 'ben', 'chunky']} ));
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+var data = [
+    {name: "Jimmy", friends:["Sara", "Liza"]},
+    {name: "Bob", friends:[]},
+    {name: "Liza", friends: ["Jimmy"]},
+    {name: "Sara", friends: ["Jimmy"]}
+  ];
+
 function nonFriends(name, array) {
-var output = [];
-var noneNames = [];
-if (Array.isArray(array.includes(name))){
-    noneNames.push(name);
+    placeHolder = [];
+    for (var i = 0; i < array.length; i++) {
+        if (name === array[i].name) {
+            placeHolder.push(name)
 }
-}
-console.log(nonFriends(('sam'), ['sam', 'john', 'ann']));
-console.log(nonFriends(('amy'), ['nancy', 'himp', 'kim']));
+    }
+return placeHolder;
+};
+//console.log(nonFriends('bob',data));
+
+
+
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

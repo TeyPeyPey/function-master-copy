@@ -176,13 +176,13 @@ var data = [
 function nonFriends(name, array) {
     placeHolder = [];
     for (var i = 0; i < array.length; i++) {
-        if (name === array[i].name) {
+        if (name !== array[i].name) {
             placeHolder.push(name)
 }
     }
 return placeHolder;
 };
-//console.log(nonFriends('bob',data));
+//console.log(nonFriends('jimmy',data));
 
 
 

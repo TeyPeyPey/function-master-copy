@@ -199,7 +199,11 @@ console.log(nonFriends('Jimmy',[
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-    
+    for (var property in object) {
+        if (property.hasOwnProperty(key)) {
+
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -166,23 +166,31 @@ console.log(isFriend('nope', {friends: ['carrie', 'ben', 'chunky']} ));
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-var data = [
+/*var data = [
     {name: "Jimmy", friends:["Sara", "Liza"]},
     {name: "Bob", friends:[]},
     {name: "Liza", friends: ["Jimmy"]},
     {name: "Sara", friends: ["Jimmy"]}
   ];
+  */
 
 function nonFriends(name, array) {
     placeHolder = [];
     for (var i = 0; i < array.length; i++) {
-        if (name !== array[i].name) {
-            placeHolder.push(name)
+        if (array[i].name !== name) {
+            if (!array[i].friends.includes(name)){
+                placeHolder.push(array[i].name);
+            }
 }
     }
 return placeHolder;
 };
-//console.log(nonFriends('jimmy',data));
+console.log(nonFriends('Jimmy',[
+    {name: "Jimmy", friends:["Sara", "Liza"]},
+    {name: "Bob", friends:[]},
+    {name: "Liza", friends: ["Jimmy"]},
+    {name: "Sara", friends: ["Jimmy"]}
+  ]));
 
 
 

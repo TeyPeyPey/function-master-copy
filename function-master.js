@@ -199,19 +199,22 @@ console.log(nonFriends('Jimmy',[
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-    for (var property in object) {
-        if (property.hasOwnProperty(key)) {
-
-        }
-    }
+    object[key] = value;
+    return object;
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+for (var i = 0; i < array.length; i++) {
+    if (object.hasOwnProperty(array[i])) {
+        delete object[array[i]]
+    }
+}
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -219,8 +222,17 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+        var output = [];
+          for (var i = 0; i < array.length; i++) {
+            if (!output.includes(array[i])) {
+              output.push(array[i])
+            }
+          }
+          return output;
+        }
+        
+        console.log(dedup([10, 30, 30, 50, 60, 70, 70]));
 
-}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
